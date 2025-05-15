@@ -9,7 +9,7 @@ function MainPage(){
         
         <div className="flex flex-col justify-center items-center w-screen mt-50">
             <h1 className="font-extrabold text-7xl">
-                <span className="">How readers find their next </span> 
+                <span className="">how readers find their next </span> 
                 <span className="text-orange-500">favorite book</span>
             </h1>
             <button className=" px-8 py-4 mt-3.5 shadow-sm hover:shadow-lg transition duration-300 text-1xl text-black font-semibold rounded-lg 
