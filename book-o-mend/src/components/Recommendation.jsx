@@ -1,24 +1,22 @@
 import { use, useEffect, useState } from "react";
 
-function Card({title,about, genre1,genre2,genre3, bookcover}){
-    return(
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <div class="px-6 py-4">
-    <img src={bookcover} width= "200" height="300"alt={title + " cover"} />
-    <div class="font-bold text-xl mb-2">{title}</div>
-    <p class="text-gray-700 text-base">
-      {about}
-    </p>
-  </div>
-  <div class="px-6 pt-4 pb-2">
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{genre1}</span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{genre2}</span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{genre3}</span>
-  </div>
-</div>
-
-    )
+function Card({ title, about, genre1, genre2, genre3, bookcover }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-xs hover:shadow-2xl transition duration-300">
+      <img src={bookcover} alt={title + " cover"} className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <div className="font-bold text-xl text-orange-500 mb-2">{title}</div>
+        <p className="text-gray-700 text-base mb-4">{about}</p>
+        <div className="flex flex-wrap gap-2">
+          <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium">{genre1}</span>
+          <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium">{genre2}</span>
+          <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium">{genre3}</span>
+        </div>
+      </div>
+    </div>
+  );
 }
+
 
 
 function Recommendation(){
@@ -142,29 +140,49 @@ function Recommendation(){
       setSubmitted(false);
     }, [submitted]);
 
-    return(
-        <>
-        <div className="flex justify-center items-center">
-          
-        <form onSubmit={handleSearch}>
-        <input 
-        type="text"
-        value={searchQuery}
-        placeholder="book title"
-        onChange={(e) => setSearchQuery(e.target.value)}
-         />
-         </form>
-         
-
+    return (
+      <div className="min-h-screen bg-white px-4 py-10">
+        <h1 className="text-3xl font-bold text-orange-500 text-center mb-4">book-o-mend</h1>
+        <p className="text-center text-gray-600 mb-6">try searching for Hamlet, Catcher in the Rye, or anything else!</p>
+  
+        <form onSubmit={handleSearch} className="flex justify-center mb-10">
+          <input
+            type="text"
+            value={searchQuery}
+            placeholder="Search for a book..."
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full max-w-md px-4 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </form>
+  
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <Card
+            title={title1}
+            about="sigma"
+            genre1={genre1_1}
+            genre2={genre1_2}
+            genre3={genre1_3}
+            bookcover={`https://covers.openlibrary.org/b/id/${bookCoverOne}-L.jpg`}
+          />
+          <Card
+            title={title2}
+            about="sigma"
+            genre1={genre2_1}
+            genre2={genre2_2}
+            genre3={genre2_3}
+            bookcover={`https://covers.openlibrary.org/b/id/${bookCoverTwo}-L.jpg`}
+          />
+          <Card
+            title={title3}
+            about="sigma"
+            genre1={genre3_1}
+            genre2={genre3_2}
+            genre3={genre3_3}
+            bookcover={`https://covers.openlibrary.org/b/id/${bookCoverThree}-L.jpg`}
+          />
         </div>
-        
-        <div className="flex justify-evenly items-center mt-50">
-            <Card title={title1} about="sigma" genre1={genre1_1} genre2={genre1_2} genre3={genre1_3} bookcover={`https://covers.openlibrary.org/b/id/${bookCoverOne}-L.jpg`}></Card>
-            <Card title={title2} about="sigma" genre1={genre2_1} genre2={genre2_2} genre3={genre2_3} bookcover={`https://covers.openlibrary.org/b/id/${bookCoverTwo}-L.jpg`}></Card>
-            <Card title={title3} about="sigma" genre1={genre3_1} genre2={genre3_2} genre3={genre3_3} bookcover={`https://covers.openlibrary.org/b/id/${bookCoverThree}-L.jpg`}></Card>
-        </div>
-        </>
-    )
-}
+      </div>
+    );
+  }
 
 export default Recommendation;
