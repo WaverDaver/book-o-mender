@@ -143,7 +143,7 @@ function Recommendation(){
     return (
       <div className="min-h-screen bg-white px-4 py-10">
         <h1 className="text-3xl font-bold text-orange-500 text-center mb-4">book-o-mend</h1>
-        <p className="text-center text-gray-600 mb-6">try searching for Hamlet, Catcher in the Rye, or anything else!</p>
+        <p className="text-center text-gray-600 mb-6">try searching for Hamlet, The Catcher in the Rye, or anything else!</p>
   
         <form onSubmit={handleSearch} className="flex justify-center mb-10">
           <input
@@ -158,7 +158,7 @@ function Recommendation(){
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           <Card
             title={title1}
-            about="sigma"
+            about="book name"
             genre1={genre1_1}
             genre2={genre1_2}
             genre3={genre1_3}
@@ -166,7 +166,7 @@ function Recommendation(){
           />
           <Card
             title={title2}
-            about="sigma"
+            about="book name"
             genre1={genre2_1}
             genre2={genre2_2}
             genre3={genre2_3}
@@ -174,7 +174,7 @@ function Recommendation(){
           />
           <Card
             title={title3}
-            about="sigma"
+            about="book name"
             genre1={genre3_1}
             genre2={genre3_2}
             genre3={genre3_3}
