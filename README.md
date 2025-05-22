@@ -11,3 +11,4 @@ A fullstack ReactJS web app that recommends users similar books to ones they hav
 
 
 I used Python and Flask to make the backend, and Render to host it.
+Backend repo: https://github.com/WaverDaver/book-o-mend-backend?tab=readme-ov-file
